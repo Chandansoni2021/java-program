@@ -1,0 +1,18 @@
+public class Solution {
+    public static int isSorted(int n, int []a) {
+        // Write your code here.
+        int c=a[0];
+        for(int i=1;i<n;i++){
+            if(a[i]>c || a[i]==c){
+                c=a[i];
+
+            }
+            else{
+                return 0;
+            }
+
+        }
+        return 1;
+
+    }
+}
