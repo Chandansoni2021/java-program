@@ -1,0 +1,40 @@
+int  secondlarge(int n, vector<int> a){
+        int max=a[0];
+        int slargest=-1;
+        for(int i=1;i<n;i++){
+          if(a[i] > max) {
+            slargest = max;
+            max = a[i];
+          } else if (max > a[i] && slargest < a[i]) {
+            slargest = a[i];
+          }
+        
+                
+
+            }
+            return slargest;
+        
+}
+int  secondsmall(int n, vector<int> a){
+        int min=a[0];
+        int ssmall=INT_MAX;
+        for(int i=1;i<n;i++){
+          if(a[i] < min) {
+            ssmall = min;
+            min = a[i];
+          } else if (min < a[i] && ssmall > a[i]) {
+            ssmall = a[i];
+          }
+        
+                
+
+            }
+            return ssmall;
+        
+}
+vector<int> getSecondOrderElements(int n, vector<int> a) {
+    // Write your code here
+    int g=secondlarge(n,a);
+    int b= secondsmall(n,a);
+    return { g, b };
+}
